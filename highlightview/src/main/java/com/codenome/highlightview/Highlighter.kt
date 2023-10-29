@@ -106,6 +106,10 @@ class Highlighter constructor(
         popupWindow?.dismiss()
         popupWindow = null
     }
+
+    fun isShowing(): Boolean {
+        return popupWindow?.isShowing == true
+    }
 }
 
 data class HighlighterConfig(
@@ -212,6 +216,7 @@ class Tooltip constructor(private val context: Context, private val tooltipConfi
             currentTextY += textHeight + tooltipConfig.lineSpacing
         }
     }
+
 
     private fun makePath(
         rect: RectF,
